@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Sorting Algorithm Visualizer | Interactive Sorting Animations by Fenil Sonani</title>
+    <meta name="title" content="Sorting Algorithm Visualizer | Interactive Sorting Animations by Fenil Sonani">
+    <meta name="description" content="Visualize and learn 10 sorting algorithms with interactive animations, real-time metrics, and code examples. Compare algorithm performance and understand how they work.">
+    <meta name="keywords" content="sorting algorithms, visualization, bubble sort, quick sort, merge sort, heap sort, algorithm animations, computer science, educational tool">
+    <meta name="author" content="Fenil Sonani">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sortvisualizer.fenilsonani.com/">
+    <meta property="og:title" content="Sorting Algorithm Visualizer | Interactive Sorting Animations">
+    <meta property="og:description" content="Visualize and learn 10 sorting algorithms with interactive animations, real-time metrics, and code examples.">
+    <meta property="og:image" content="https://sortvisualizer.fenilsonani.com/images/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sortvisualizer.fenilsonani.com/">
+    <meta property="twitter:title" content="Sorting Algorithm Visualizer | Interactive Sorting Animations">
+    <meta property="twitter:description" content="Visualize and learn 10 sorting algorithms with interactive animations, real-time metrics, and code examples.">
+    <meta property="twitter:image" content="https://sortvisualizer.fenilsonani.com/images/og-image.png">
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://sortvisualizer.fenilsonani.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='10' fill='%23234'/%3E%3Crect x='20' y='70' width='10' height='15' fill='%236cf'/%3E%3Crect x='35' y='50' width='10' height='35' fill='%235ae'/%3E%3Crect x='50' y='30' width='10' height='55' fill='%2349d'/%3E%3Crect x='65' y='20' width='10' height='65' fill='%2338c'/%3E%3C/svg%3E">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" integrity="sha256-+8RZJua0aEWg+QVVKg4LEzEEm/8RFez5Tb4JBNiV5xA=" crossorigin="anonymous"></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Sorting Algorithm Visualizer",
+      "author": {
+        "@type": "Person",
+        "name": "Fenil Sonani",
+        "url": "https://fenilsonani.com"
+      },
+      "description": "An interactive web-based visualization tool for common sorting algorithms with real-time animation and comprehensive metrics tracking.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="https://sortvisualizer.fenilsonani.com" title="Sorting Algorithm Visualizer">
+                <svg width="50" height="50" viewBox="0 0 100 100" class="logo">
+                    <!-- Background rectangle with rounded corners -->
+                    <rect width="100" height="100" rx="10" fill="#234" />
+                    
+                    <!-- Sorting bars representing different heights -->
+                    <rect x="15" y="75" width="10" height="10" fill="#6cf" />
+                    <rect x="30" y="55" width="10" height="30" fill="#5ae" />
+                    <rect x="45" y="35" width="10" height="50" fill="#49d" />
+                    <rect x="60" y="25" width="10" height="60" fill="#38c" />
+                    <rect x="75" y="15" width="10" height="70" fill="#27b" />
+                    
+                    <!-- Animation indicators -->
+                    <circle cx="20" cy="70" r="2" fill="#fff" opacity="0.7">
+                        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="35" cy="50" r="2" fill="#fff" opacity="0.7">
+                        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.4s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="50" cy="30" r="2" fill="#fff" opacity="0.7">
+                        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.8s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="65" cy="20" r="2" fill="#fff" opacity="0.7">
+                        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="80" cy="10" r="2" fill="#fff" opacity="0.7">
+                        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.6s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
+            </a>
+        </div>
+        <h1>Sorting Algorithm Visualizer</h1>
+        <div class="author-link">
+            <a href="https://fenilsonani.com" target="_blank" rel="noopener" title="Visit Fenil Sonani's website">
+                by Fenil Sonani
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="controls-panel">
+            <div class="algorithms">
+                <label for="algorithm">Algorithm:</label>
+                <select id="algorithm">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="quick">Quick Sort</option>
+                    <option value="heap">Heap Sort</option>
+                    <option value="shell">Shell Sort</option>
+                    <option value="radix">Radix Sort</option>
+                    <option value="comb">Comb Sort</option>
+                    <option value="cocktail">Cocktail Sort</option>
+                </select>
+            </div>
+
+            <div class="size-control">
+                <label for="size">Size:</label>
+                <input type="range" id="size" min="5" max="100" value="30">
+                <span id="size-value">30</span>
+            </div>
+
+            <div class="speed-control">
+                <label for="speed">Speed:</label>
+                <input type="range" id="speed" min="1" max="300" value="50">
+                <span id="speed-value">50</span>
+                <div class="speed-presets">
+                    <button class="speed-btn" data-speed="30">Very Slow</button>
+                    <button class="speed-btn" data-speed="90">Slow</button>
+                    <button class="speed-btn" data-speed="150">Medium</button>
+                    <button class="speed-btn" data-speed="210">Fast</button>
+                    <button class="speed-btn" data-speed="270">Very Fast</button>
+                </div>
+            </div>
+
+            <div class="distribution">
+                <label for="distribution">Distribution:</label>
+                <select id="distribution">
+                    <option value="random">Random</option>
+                    <option value="nearly-sorted">Nearly Sorted</option>
+                    <option value="reversed">Reversed</option>
+                    <option value="few-unique">Few Unique Values</option>
+                </select>
+            </div>
+
+            <div class="display-options">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="show-numbers" checked>
+                    Show Numbers
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="show-metrics" checked>
+                    Show Metrics
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="dark-mode" checked>
+                    Dark Mode
+                </label>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="generate" class="btn"><i class="fas fa-random"></i> Generate New Array</button>
+            <button id="play" class="btn primary"><i class="fas fa-play"></i> Play</button>
+            <button id="pause" class="btn" disabled><i class="fas fa-pause"></i> Pause</button>
+            <button id="step" class="btn"><i class="fas fa-step-forward"></i> Step</button>
+            <button id="reset" class="btn"><i class="fas fa-undo"></i> Reset</button>
+        </div>
+
+        <div class="info-panel">
+            <div class="complexity">
+                <div id="time-complexity">Time: O(n²)</div>
+                <div id="space-complexity">Space: O(1)</div>
+            </div>
+            <div class="stats">
+                <div id="comparisons">Comparisons: 0</div>
+                <div id="swaps">Swaps: 0</div>
+                <div id="array-accesses">Accesses: 0</div>
+                <div id="memory-usage">Memory: 0 units</div>
+            </div>
+        </div>
+
+        <div class="visualization-container">
+            <div id="visualization" class="bars-container"></div>
+        </div>
+        
+        <div class="metrics-container" id="metrics-container">
+            <div class="metrics-header">
+                <h3>Real-time Metrics</h3>
+                <div class="metrics-controls">
+                    <button id="toggle-metrics" class="btn small"><i class="fas fa-chevron-up"></i></button>
+                </div>
+            </div>
+            <div class="metrics-charts">
+                <div class="chart-container">
+                    <canvas id="operationsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="memoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="description">
+            <h3 id="algorithm-title">Bubble Sort</h3>
+            <p id="algorithm-description">
+                Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.
+            </p>
+        </div>
+        
+        <div class="code-panel">
+            <div class="code-panel-header">
+                <h3>Algorithm Implementation</h3>
+                <div class="language-toggle">
+                    <label class="radio-label">
+                        <input type="radio" name="code-language" value="javascript" checked> JavaScript
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="code-language" value="python"> Python
+                    </label>
+                </div>
+            </div>
+            <div class="code-container">
+                <pre><code id="algorithm-code" class="language-javascript"></code></pre>
+            </div>
+        </div>
+    </main>
+
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sorting Algorithm Help</h2>
+            <div class="modal-body">
+                <h3>Controls</h3>
+                <ul>
+                    <li><strong>Generate New Array</strong>: Create a new array with the selected size and distribution</li>
+                    <li><strong>Play</strong>: Start the sorting animation</li>
+                    <li><strong>Pause</strong>: Pause the current animation</li>
+                    <li><strong>Step</strong>: Move forward one step in the algorithm</li>
+                    <li><strong>Reset</strong>: Reset the current array to its initial state</li>
+                </ul>
+
+                <h3>Algorithms</h3>
+                <ul>
+                    <li><strong>Bubble Sort</strong>: O(n²) - Simple but inefficient</li>
+                    <li><strong>Insertion Sort</strong>: O(n²) - Efficient for small data sets</li>
+                    <li><strong>Selection Sort</strong>: O(n²) - Simple and inefficient</li>
+                    <li><strong>Merge Sort</strong>: O(n log n) - Divide and conquer approach</li>
+                    <li><strong>Quick Sort</strong>: O(n log n) avg - Efficient divide and conquer</li>
+                    <li><strong>Heap Sort</strong>: O(n log n) - In-place divide and conquer</li>
+                    <li><strong>Radix Sort</strong>: O(nk) - Non-comparative integer sort</li>
+                    <li><strong>Shell Sort</strong>: O(n log² n) - Generalization of insertion sort</li>
+                    <li><strong>Comb Sort</strong>: O(n²) - Improvement over bubble sort</li>
+                    <li><strong>Cocktail Sort</strong>: O(n²) - Bidirectional bubble sort</li>
+                </ul>
+                
+                <h3>Metrics</h3>
+                <ul>
+                    <li><strong>Comparisons</strong>: Number of times elements are compared</li>
+                    <li><strong>Swaps</strong>: Number of times elements are swapped</li>
+                    <li><strong>Accesses</strong>: Number of times the array is accessed</li>
+                    <li><strong>Memory Usage</strong>: Amount of auxiliary memory used</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <svg width="40" height="40" viewBox="0 0 100 100" class="logo">
+                        <rect width="100" height="100" rx="10" fill="#234" />
+                        <rect x="15" y="75" width="10" height="10" fill="#6cf" />
+                        <rect x="30" y="55" width="10" height="30" fill="#5ae" />
+                        <rect x="45" y="35" width="10" height="50" fill="#49d" />
+                        <rect x="60" y="25" width="10" height="60" fill="#38c" />
+                        <rect x="75" y="15" width="10" height="70" fill="#27b" />
+                    </svg>
+                    <h3>Sorting Visualizer</h3>
+                </div>
+                <p class="footer-description">An interactive web-based tool for visualizing sorting algorithms in action.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a id="help-button" href="#help">Help Guide</a></li>
+                    <li><a href="#algorithms">Algorithms</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="https://fenilsonani.com/about" target="_blank" rel="noopener">About Fenil Sonani</a></li>
+                    <li><a href="https://github.com/fenilsonani/sorting-algorithm-visualizer" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://fenilsonani.com/contact" target="_blank" rel="noopener">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; @2025 <a href="https://fenilsonani.com" target="_blank" rel="noopener">Fenil Sonani</a>
+            </div>
+            <div class="site-link">
+                <a href="https://sortvisualizer.fenilsonani.com">sortvisualizer.fenilsonani.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/algorithms.js"></script>
+    <script src="js/visualizer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
