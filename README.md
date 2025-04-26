@@ -124,4 +124,4 @@ Sorting algorithms, visualization tool, algorithm comparison, bubble sort, quick
 
 ---
 
-© 2023 [Fenil Sonani](https://fenilsonani.com) | [sortvisualizer.fenilsonani.com](https://sortvisualizer.fenilsonani.com) 
+© 2025 [Fenil Sonani](https://fenilsonani.com) | [sortvisualizer.fenilsonani.com](https://sortvisualizer.fenilsonani.com) 
